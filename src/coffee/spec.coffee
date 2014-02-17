@@ -3,19 +3,12 @@ define 'spec', [], () ->
         create: {
             module: 'App',
             args: [
-                { '$ref': 'router' }
+                { '$ref': 'router' },
             ]
         }
     },
     router: {
         create: {
-            module: 'Router',
-            args: [
-                { '$ref': 'routes' }
-            ]
+            module: 'Router'
         }
-    },
-    routes: {
-        '/say/:something': (something) ->
-            console.log(something);
     }
