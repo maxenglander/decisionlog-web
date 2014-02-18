@@ -2,17 +2,21 @@ define 'App', [], ->
     class App
         isStarted: false
 
-        constructor: (@router) ->
-            @router.mount(@routes())
+        constructor: (@router, @view) ->
+            @router.mount @routes()
 
-        index: -> 
-            console.log('index')
+        index: => 
+            @view.render()
+
+        new: =>
+            @view.new() 
             
         routes: ->
             '/': @index
+            '/new' : @new
 
         start: ->
             if @isStarted
                 return
-            @router.init('/')
+            @router.init '/'
             @isStarted = true

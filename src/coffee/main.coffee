@@ -5,11 +5,17 @@ requirejs.config {
         { name: 'wire', location: '../../vendor/wire', main: 'wire' }
     ],
     paths: {
-        Router: '../../vendor/director/build/director-1.1.2'
+        Router: '../../vendor/director/build/director-1.1.2',
+        template: '../../template',
+        text: '../../vendor/requirejs-text/text'
+        Zepto: '../../vendor/zeptojs/src/zepto'
     },
     shim: {
         Router: {
             exports: 'Router'
+        },
+        Zepto: {
+            exports: 'Zepto'
         }
     }
 }
